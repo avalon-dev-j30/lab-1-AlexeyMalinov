@@ -42,7 +42,7 @@ insert into Users(email,password,info,role) values
 --Создание таблицы orders, на схеме указана таблица order, но такую создать нельзя
 create table orders(
 id int generated always as identity (start with 1, increment by 1) primary key,
-user_id int, --в схеме указано поде user, но такое создать нельзя
+user_id int, --в схеме указано поле user, но такое создать нельзя
 created timestamp,
 constraint fk_users_id foreign key (user_id) references users(id)
 );
@@ -87,7 +87,7 @@ insert into Product(code,title,supplier,initial_price,retail_value) values
 
 --Создание таблицы Order2Product
 create table Order2Product(
-order_id int, --в схеме указано поде order, но такое создать нельзя
+order_id int, --в схеме указано поле order, но такое создать нельзя
 product int,
 constraint fk_orders_id foreign key (order_id) references orders(id),
 constraint fk_product_id foreign key (product) references product(id)
