@@ -90,7 +90,8 @@ create table Order2Product(
 order_id int, --в схеме указано поле order, но такое создать нельзя
 product int,
 constraint fk_orders_id foreign key (order_id) references orders(id),
-constraint fk_product_id foreign key (product) references product(id)
+constraint fk_product_id foreign key (product) references product(id),
+constraint pk_order_2_product primary key (order_id, product)
 );
 
 --Добавление 3-х записей в таблицу Product
